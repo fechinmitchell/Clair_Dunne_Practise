@@ -1,0 +1,44 @@
+.probootstrap-logo {
+  float: left;
+  color: #54a9d4;
+  padding-left: 0px;
+  font-size: 30px;
+  display: block;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.main-title {
+  font-size: 30px; /* Original font size */
+  font-weight: 100; /* Original font weight */
+  color: #54a9d4;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Add glow effect */
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align titles to the right */
+  margin-top: 5px; /* Add some space between the name and the titles */
+}
+
+.titles span {
+  font-size: 14px; /* Increased font size */
+  font-weight: 500; /* Adjusted font weight for elegance */
+  color: #333; /* Darker color for better visibility */
+  margin-top: 0px; /* Remove top margin */
+  margin-bottom: 0px; /* Reduce space between titles */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Add glow effect */
+}
+
+.titles span + span {
+  margin-top: -10px; /* Add a bit of space between titles */
+}
+
+.probootstrap-logo:hover,
+.probootstrap-logo:focus,
+.probootstrap-logo:active {
+  color: #54a9d4;
+  text-decoration: none;
+}

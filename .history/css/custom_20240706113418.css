@@ -1,0 +1,27 @@
+/* Your custom css code goes here */
+.probootstrap-logo {
+    float: left;
+    color: #54a9d4;
+    padding-left: 0px;
+    font-size: 30px;
+    display: block;
+    font-weight: 100;
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+  }
+  
+  .clinical-supervisor-title {
+    display: inline-block; /* Ensures it stays on the same line initially */
+    font-size: 12px;
+    font-weight: 300;
+    color: #666; /* A complementary color, adjust as needed */
+    margin-left: 5px; /* Adjust space between the name and title */
+    vertical-align: text-top; /* Aligns the title closer to the name */
+  }
+  
+  .probootstrap-logo:hover, .probootstrap-logo:focus, .probootstrap-logo:active {
+    color: #54a9d4;
+    text-decoration: none;
+  }
+  
+  

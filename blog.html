@@ -1,256 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Clair Dunne Vlogs</title>
+    <title>Blogs | Therapy and Life Coaching | Clair Dunne</title>
     <meta name="description" content="Clair Dunne Psychotherapy & Life Coaching">
-    <meta name="keywords" content="Clair Dunne, Psychotherapy, Psychotherapist, Dubai, UAE, Pyschology, Life Coaching">
+    <meta name="keywords" content="Clair Dunne, Psychotherapy, Psychotherapist, Dubai, UAE, Psychology, Life Coaching">
     
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles-merged.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/main.min.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-
-
-    <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-
-  <!-- START: header -->
-  
-  <div class="probootstrap-loader"></div>
-
-  <header role="banner" class="probootstrap-header">
-    <div class="container">
-        <a href="index.html" class="probootstrap-logo">Clair Dunne</a>
+    <style>
+        /* Additional styles for blog page */
+        .section-full {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            overflow: hidden;
+        }
         
-        <a href="#" class="probootstrap-burger-menu visible-xs" ><i>Menu</i></a>
-        <div class="mobile-menu-overlay"></div>
+        .section-full .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        
+        /* Add overlay for better text readability */
+        .section-full::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+        
+        .bodyblog {
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.98);
+            margin: 0 auto;
+            max-width: 1000px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            backdrop-filter: blur(10px);
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .bodyblog .heading {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 300;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        /* Add decorative line under heading */
+        .bodyblog .heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #5cb3cc;
+            border-radius: 2px;
+        }
+        
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #f8f9fa;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(92, 179, 204, 0.2);
+        }
+        
+        .box iframe {
+            width: 100%;
+            height: 280px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Add play icon overlay effect */
+        .box::before {
+            content: '▶';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(92, 179, 204, 0.8);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .box:hover::before {
+            opacity: 0.9;
+        }
+        
+        /* Add video titles */
+        .box::after {
+            content: attr(data-title);
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: #333;
+            font-weight: 400;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .box:hover::after {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .section-full {
+                padding: 60px 15px;
+            }
+            
+            .bodyblog {
+                padding: 40px 25px;
+                border-radius: 12px;
+            }
+            
+            .bodyblog .heading {
+                font-size: 2rem;
+            }
+            
+            .wrapper {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 35px;
+            }
+            
+            .box iframe {
+                height: 200px;
+            }
+            
+            .box::before {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .bodyblog {
+                padding: 30px 20px;
+            }
+            
+            .bodyblog .heading {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
 
-        <nav role="navigation" class="probootstrap-nav hidden-xs">
-          <ul class="probootstrap-main-nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="psychotherapy.html">Psychotherapy</a></li>
-            <li><a href="lifecoaching.html">Life Coaching</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <!-- <li><a href="about.html">About</a></li> -->
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <div class="extra-text visible-xs"> 
-            <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>
-            <h5>Address</h5>
-            <p>Clair Dunne</p>
-            <h5>Connect</h5>
-            <ul class="social-buttons">
-              <li><a href="#"><i class="icon-twitter"></i></a></li>
-              <li><a href="#"><i class="icon-facebook2"></i></a></li>
-              <li><a href="#"><i class="icon-instagram2"></i></a></li>
+<body>
+    <!-- Loading animation -->
+    <div class="probootstrap-loader"></div>
+
+    <!-- Navigation Overlay -->
+    <nav class="probootstrap-nav-overlay">
+        <div class="container">
+            <ul class="probootstrap-main-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="psychotherapy.html">Psychotherapy</a></li>
+                <li><a href="lifecoaching.html">Life Coaching</a></li>
+                <li class="active"><a href="blog.html">Blogs</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-          </div>
-        </nav>
-    </div>
-  </header>
-  <!-- END: header -->
-
-  <!-- Vlog Section -->
-  <div class="probootstrap-main">
-  
-    <section class="probootstrap-section-full">
-      <div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(img/image_1_blog.jpg)"></div>
-      <div class="bodyblog">
-          <h1 class="heading">Vlogs</h1>
-          <div class="wrapper">
-            <div class="box a">
-              <iframe width="420" height="315"
-              src="https://www.youtube.com/embed/Jd-L9gH9CUw">
-              </iframe>
-            </div>
-            <div class="box b">              
-              <iframe width="420" height="315"
-              src="https://www.youtube.com/embed/YVWbL7HHLpA">
-              </iframe>
-            </div>
-            <!-- <div class="box c">
-              <iframe width="420" height="315"
-              src="https://www.youtube.com/embed/tgbNymZ7vqY">
-              </iframe>
-            </div> -->
-            <!-- <div class="box d">D</div>
-            <div class="box e">E</div>
-            <div class="box f">F</div> -->
+            <a href="#" class="probootstrap-burger-menu visible-xs"><i>Menu</i></a>
         </div>
-            
-    </section>
-  <!-- END section -->
+    </nav>
 
-  <!-- Blog Section -->
-  <!-- <div class="probootstrap-main">
-  
-    <section class="probootstrap-section-full">
-      <div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(img/image_1_blog.jpg)"></div> -->
-      <!-- <div class="bodyblog">
-          <h1 class="heading">Blogs</h1>
-          <div class="wrapper">
-            <div class="box a">
-              <img src="img/sample.png" alt="Blog 3" width="420" height="240">
-              </iframe>
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Vlog Section -->
+        <section class="section-full">
+            <div class="image animate" data-animate-effect="fadeIn" style="background-image: url(img/image_1_blog.jpg)"></div>
+            <div class="bodyblog">
+                <h1 class="heading">Video Resources</h1>
+                <div class="wrapper">
+                    <div class="box" data-title="Introduction to Therapy">
+                        <iframe width="420" height="315" src="https://www.youtube.com/embed/Jd-L9gH9CUw" title="Introduction to Therapy"></iframe>
+                    </div>
+                    <div class="box" data-title="Understanding Life Coaching">              
+                        <iframe width="420" height="315" src="https://www.youtube.com/embed/YVWbL7HHLpA" title="Understanding Life Coaching"></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="box b">              
-              <img src="img/sample.png" alt="Blog 3" width="420" height="240">
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="probootstrap-footer">
+        <div class="container">
+            <div class="row">
+                <div class="copyright">
+                    Get in <a href="contact.html">Touch</a>
+                </div>
+                <div class="copyright">
+                    <span>&#169;</span> <strong><span>All rights reserved</span></strong> | <a href="disclaimer.html">Disclaimer</a> | <a href="shortpolicy.html">Privacy Policy</a> |
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://fechinmitchell.com/">Fechín Mitchell</a>
+                </div>
             </div>
-            <div class="box c">
-              <img src="img/sample.png" alt="Blog 3" width="420" height="240">
-            </div> -->
-            <!-- <div class="box d">D</div>
-            <div class="box e">E</div>
-            <div class="box f">F</div> -->
-        <!-- </div>
-            
-    </section> -->
-  <!-- END section -->
-
-  <!-- <section class="probootstrap-section-half">
-    <div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(img/image_3_blog.jpg)"></div>
-    <div class="probootstrap-text">
-      <div class="probootstrap-inner probootstrap-animate">
-        <h1 class="heading">Contact Info</h1>
-          <p>
-            If you have any questions or simply want to discuss 
-            therapy and coaching do not hesitate to contact me. 
-            I am available on email for any queries and to arrange 
-            a free call.
-          </p>
-          <h1 class="heading"></h1>
-          <p>
-            As a member of IAHIP, EMCC and ICF I adhere to the 
-            ethical and practice guidelines as published by 
-            IAHIP, EMCC and ICF which can be found by clicking 
-            the links.
-          </p>
-          <p><a href="contact.html" class="btn btn-primary">GET IN TOUCH</a></p>
-      </div>
-    </div>
-  </section>  -->
-  <!-- END section -->
-  <!-- </div>
-  <footer class="probootstrap-footer">
-    <div class="container">
-      <div class="row">
-        <div class="copyright">
-          Get in <a href="contact.html">Touch</a></a>
         </div>
-        <div class="copyright">
-          <span>&#169;</span> <strong><span>All rights reserved</span></strong> | <a href="disclaimer.html">Disclaimer</a> | <a href="shortpolicy.html">Privacy Policy</a> |
-        </div>
-        <div class="credits">
-          Designed by <a href="https://fechinmitchell.com/">Fechín Mitchell</a>
+    </footer>
+
+    <!-- Back to top -->
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
     </div>
-  </footer> -->
 
-
-
-
-
-  <!-- <div class="probootstrap-main">
-  
-    <section class="probootstrap-section-half">
-      <div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(img/image_1_contact.jpg)"></div>
-      <div class="probootstrap-text">
-        <div class="probootstrap-inner probootstrap-animate">
-          <h1 class="heading">Contact Info</h1>
-          <p>
-            I offer one-on-one video calls via Zoom. If
-            you’d prefer a different format (Skype,
-            FaceTime, What’s App), I can be flexible.
-            Sessions last 60 minutes and are followed
-            up with an email outlining our main
-            discussion points and your ‘next actions’.
-          </p>
-          <h1 class="heading">Free Chemistry Session</h1>
-          <p>
-            Find out if I am the right coach for you.
-          </p>
-          <h4></h4>
-          <h5>Email: clairjdunne17@gmail.com</h5>
-          <h5>Telephone: 00353868310488</h5>
-          <p><a href="mailto:clairjdunne17@gmail.com" class="btn btn-primary">Send Email</a></p>
-          
-          <p><a href="single-page.html" class="btn btn-primary">View Case Study</a></p> -->
-        <!-- </div>
-      </div>
-    </section> -->
-    <!-- END section -->
-
-    <!-- <section class="probootstrap-section-half probootstrap-reverse">
-      <div class="probootstrap-image probootstrap-animate"  data-animate-effect="fadeIn" style="background-image: url(img/image_2_contact.jpg)"></div>
-      <div class="probootstrap-text">
-        <div class="probootstrap-inner probootstrap-animate">
-          <h1 class="heading"></h1>
-          <p>
-            I offer one-on-one video calls via Zoom. If
-            you’d prefer a different format (Skype,
-            FaceTime, What’s App), I can be flexible.
-            Sessions last 60 minutes and are followed
-            up with an email outlining our main
-            discussion points and your ‘next actions’.
-          </p>
-          <h1 class="heading">Free Chemistry Session</h1>
-          <p>
-            Find out if I am the right coach for you.
-          </p>
-          <h4>MA in Humanistic and Integrative Psychotherapy (2002)</h4>
-          <h4>Accredited member of IAHIP</h4>
-          <h4></h4>
-          <p><a href="contact.html" class="btn btn-primary">GET IN TOUCH</a></p>
-          <p><a href="single-page.html" class="btn btn-primary">View Case Study</a></p> -->
-        <!-- </div>
-      </div>
-    </section> -->
-    <!-- END section -->
-    
-
-    <!-- <section class="probootstrap-section-half probootstrap-reverse">
-      <div class="probootstrap-image probootstrap-animate" data-animate-effect="fadeIn" style="background-image: url(img/image_4.jpg)"></div>
-      <div class="probootstrap-text">
-        <div class="probootstrap-inner probootstrap-animate">
-          <h1 class="heading">Pink Lips in the Hole</h1>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-          <p><a href="single-page.html" class="btn btn-primary">View Case Study</a></p>
-        </div>
-      </div>
-    </section> -->
-    <!-- END section -->
-    </div>
-    <!-- <footer class="probootstrap-footer">
-      <div class="container">
-        <div class="row">
-          <div class="copyright">
-            Get in <a href="contact.html">Touch</a></a>
-          </div>
-          <div class="copyright">
-            <span>&#169;</span> <strong><span>All rights reserved</span></strong> | <a href="disclaimer.html">Disclaimer</a> | <a href="shortpolicy.html">Privacy Policy</a> |
-          </div>
-          <div class="credits">
-            Designed by <a href="https://fechinmitchell.com/">Fechín Mitchell</a>
-      </div>
-    </footer> -->
-
-  
-
-  <div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-chevron-thin-up"></i></a>
-  </div>
-  
-
-  <script src="js/scripts.min.js"></script>
-  <script src="js/main.min.js"></script>
-  <script src="js/custom.js"></script>
-
-  </body>
+    <script src="js/main.min.js"></script>
+</body>
 </html>

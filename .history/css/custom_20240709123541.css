@@ -1,0 +1,95 @@
+.probootstrap-logo {
+  position: absolute;
+  left: 50px; /* Move the titles more to the left */
+  top: 30px; /* Adjust as needed to position the titles vertically */
+  color: #76bde1;
+  padding-left: 0px;
+  font-size: 30px;
+  display: block;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-title {
+  font-size: 35px; /* Original font size */
+  font-weight: 300; /* Original font weight */
+  color: #76bde1;
+  position: relative;
+  z-index: 1; /* Ensure the text is on top */
+}
+
+.main-title::before {
+  content: '';
+  position: absolute;
+  left: -10px; /* Adjust position as needed */
+  top: -5px; /* Adjust position as needed */
+  width: calc(100% + 20px); /* Adjust width as needed */
+  height: calc(100% + 10px); /* Adjust height as needed */
+  background: rgba(255, 255, 255, 0.741); /* Background color with transparency */
+  filter: blur(2px); /* Blur effect */
+  z-index: -1; /* Ensure the blur is behind the text */
+  border-radius: 5px; /* Optional: add border radius for a rounded effect */
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align titles to the left */
+  margin-top: -10px; /* Reduce space between the name and the titles */
+}
+
+.titles span {
+  font-size: 14px; /* Increased font size */
+  font-weight: 500; /* Adjusted font weight for elegance */
+  color: #333; /* Darker color for better visibility */
+  margin-top: 0px; /* Remove top margin */
+  margin-bottom: -5px; /* Reduce space between titles */
+  position: relative;
+  z-index: 1; /* Ensure the text is on top */
+}
+
+.titles span::before {
+  content: '';
+  position: absolute;
+  left: -5px; /* Adjust position as needed */
+  top: 0px; /* Adjust position as needed */
+  width: calc(100% + 15px); /* Adjust width as needed */
+  height: calc(100% - 0px); /* Adjust height as needed */
+  background: rgba(255, 255, 255, 0.741); /* Background color with transparency */
+  filter: blur(2px); /* Blur effect */
+  z-index: -1; /* Ensure the blur is behind the text */
+  border-radius: 2px; /* Optional: add border radius for a rounded effect */
+}
+
+.probootstrap-logo:hover,
+.probootstrap-logo:focus,
+.probootstrap-logo:active {
+  color: #54a9d4;
+  text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 40px; /* Smaller font size for smaller screens */
+  }
+  
+  .titles span {
+    font-size: 14px; /* Smaller font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .probootstrap-logo {
+    left: 30px; /* Move titles further to the left for very small screens */
+    top: 10px; /* Adjust top position as needed */
+  }
+
+  .main-title {
+    font-size: 30px; /* Even smaller font size for very small screens */
+  }
+  
+  .titles span {
+    font-size: 12px; /* Even smaller font size for very small screens */
+  }
+}

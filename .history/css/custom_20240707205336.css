@@ -1,0 +1,39 @@
+.probootstrap-logo {
+  float: left;
+  color: #54a9d4;
+  padding-left: 0px;
+  font-size: 30px;
+  display: block;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.probootstrap-logo span {
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  color: #666; /* A complementary color, adjust as needed */
+  position: absolute;
+  right: 0; /* Aligns to the right side of the container */
+  margin-top: 0px; /* Reduces the space between the name and title */
+}
+
+.probootstrap-logo .clinical-title:nth-child(2) {
+  top: 45px; /* Adjust this value to position the first title below "Clair Dunne" */
+}
+
+.probootstrap-logo .clinical-title:nth-child(3) {
+  top: 70px; /* Adjust this value to position the second title below the first */
+}
+
+.probootstrap-logo .clinical-title:nth-child(4) {
+  top: 20px; /* Adjust this value to position the third title below the second */
+}
+
+.probootstrap-logo:hover,
+.probootstrap-logo:focus,
+.probootstrap-logo:active {
+  color: #54a9d4;
+  text-decoration: none;
+}

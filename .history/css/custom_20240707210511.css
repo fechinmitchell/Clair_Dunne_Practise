@@ -1,0 +1,34 @@
+.probootstrap-logo {
+  float: left;
+  color: #54a9d4;
+  padding-left: 0px;
+  font-size: 30px;
+  display: block;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align titles to the left */
+  margin-top: 5px; /* Add some space between the name and the titles */
+}
+
+.probootstrap-logo span {
+  font-size: 14px; /* Increased font size */
+  font-weight: 500; /* Adjusted font weight for elegance */
+  color: #333; /* Darker color for better visibility */
+  margin-top: 2px; /* Adds 2px more space between titles */
+}
+
+.probootstrap-logo:hover,
+.probootstrap-logo:focus,
+.probootstrap-logo:active {
+  color: #54a9d4;
+  text-decoration: none;
+}
+
+
+

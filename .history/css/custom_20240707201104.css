@@ -1,0 +1,26 @@
+.probootstrap-logo {
+  float: left;
+  color: #54a9d4;
+  padding-left: 0px;
+  font-size: 30px;
+  display: block;
+  font-weight: 100;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+}
+
+.probootstrap-logo span {
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  color: #666; /* A complementary color, adjust as needed */
+  position: relative;
+  margin-top: 5px; /* Adjust space between the name and title */
+}
+
+.probootstrap-logo:hover,
+.probootstrap-logo:focus,
+.probootstrap-logo:active {
+  color: #54a9d4;
+  text-decoration: none;
+}
